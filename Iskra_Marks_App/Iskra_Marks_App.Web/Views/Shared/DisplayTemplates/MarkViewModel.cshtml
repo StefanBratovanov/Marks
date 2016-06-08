@@ -1,0 +1,13 @@
+﻿@model Iskra_Marks_App.Web.ViewModels.MarkViewModel
+
+@{
+    ViewBag.Title = "MarkViewModel";
+}
+
+<div class="panel panel-body panel-info col-md-2">
+    <h4><strong>@Model.Name</strong></h4>
+    <p>Owner: @Model.Owner</p>
+    <p>Country: @Model.Country</p>
+    <p>Expires on: <span class="expiration"> @String.Format("{0:d-MMM-yyyy}", @Model.ExpirationDate)</span></p>
+</div>
+
