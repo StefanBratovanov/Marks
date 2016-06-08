@@ -1,0 +1,15 @@
+﻿@model  Iskra_Marks_App.Web.ViewModels.MarkViewModel
+@{
+    ViewBag.Title = "Details";
+}
+
+<h3>Mark Details:</h3>
+
+<div class="row well">
+    <h4><strong>@Model.Name</strong></h4>
+    <p>Owner: @Model.Owner</p>
+    <p>Country: @Model.Country</p>
+    <p>Expires on: <span class="expiration"> @String.Format("{0:d-MMM-yyyy}", @Model.ExpirationDate)</span></p>
+    <p>Owner: @Model.Number</p>
+    <p>Notes: @Model.Notes</p>
+</div>

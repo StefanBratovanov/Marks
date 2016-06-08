@@ -36,7 +36,8 @@ namespace Iskra_Marks_App.Web.ViewModels
                     ExpirationDate = m.ExpirationDate,
                     Notes = m.Notes,
                     Owner = m.Owner.Name,
-                    Country = m.Country.Name
+                    Country = m.Country.Name,
+                    Number = m.Number
                 };
             }
         }

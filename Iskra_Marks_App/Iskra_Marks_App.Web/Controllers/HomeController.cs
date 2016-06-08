@@ -34,8 +34,6 @@ namespace Iskra_Marks_App.Web.Controllers
 
         public ActionResult All()
         {
-            var expDate = DateTime.Now.AddMonths(6);
-
             var marks = this.Data
                 .Marks
                 .All()
