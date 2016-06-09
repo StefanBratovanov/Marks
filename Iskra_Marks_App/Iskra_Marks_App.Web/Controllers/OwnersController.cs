@@ -12,35 +12,34 @@ using Iskra_Marks_App.Web.ViewModels;
 
 namespace Iskra_Marks_App.Web.Controllers
 {
-    public class CountriesController : BaseController
+    public class OwnersController : BaseController
     {
-        public CountriesController(IMarksData data)
+        public OwnersController(IMarksData data)
            : base(data)
         {
         }
 
         public ActionResult Index()
         {
-            var countries = this.Data
-                .Countries
+            var owners = this.Data
+                .Owners
                 .All()
                 .OrderBy(x => x.Name)
-                .Select(CountryViewModel.ViewModel)
-            ;
+                .ProjectTo<OwnerViewModel>();
 
-            return View(countries);
+            return View(owners);
         }
 
 
         public ActionResult Details(int id)
         {
-            var country = this.Data.Countries
+            var owner = this.Data.Owners
                 .All()
                 .Where(x => x.Id == id)
-                .Select(CountryDetailsViewModel.ViewModel)
+                .Select(OwnerDetailsViewModel.ViewModel)
                 .FirstOrDefault();
 
-            return this.View(country);
+            return this.View(owner);
         }
 
         public ActionResult Create()
@@ -50,20 +49,20 @@ namespace Iskra_Marks_App.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(CountryInputModel model)
+        public ActionResult Create(OwnerInputModel model)
         {
             if (model != null && this.ModelState.IsValid)
             {
-                var country = Mapper.Map<Country>(model);
-                this.Data.Countries.Add(country);
+                var owner = Mapper.Map<Owner>(model);
+                this.Data.Owners.Add(owner);
                 this.Data.SaveChanges();
 
-                return this.RedirectToAction("Index", "Countries");
+                return this.RedirectToAction("Index", "Owners");
             }
 
             return this.View(model);
         }
 
-       
+
     }
 }

@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Iskra_Marks_App.Web.ViewModels.OwnerViewModel>
+
+@{
+    ViewBag.Title = "Owners";
+}
+
+<div class="well">
+    <h1>@ViewBag.Title</h1>
+    @Html.ActionLink("Add NEW owner", "Create", "Owners")
+</div>
+
+<div class="row">
+    @Html.DisplayFor(x => x)
+</div>
+

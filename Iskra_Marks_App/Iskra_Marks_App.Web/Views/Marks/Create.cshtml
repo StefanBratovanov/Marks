@@ -39,7 +39,7 @@
         @Html.LabelFor(x => x.CountryId, new { @class = "col-md-2 control-label" })
         @Html.DropDownListFor(x => x.CountryId, (IEnumerable<SelectListItem>)ViewBag.Countries, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.CountryId, "", new { @class = "text-danger" })
-        <span class="move-right">OR:</span> @Html.ActionLink("Add NEW country", "All", "Home", new { area = "" }, new { @class= "form-group" })
+        <span class="move-right">OR:</span> @Html.ActionLink("Add NEW country", "Create", "Countries", new { area = "" }, new { @class = "form-group" })
     </div>
 
 
@@ -47,7 +47,7 @@
         @Html.LabelFor(x => x.OwnerId, new { @class = "col-md-2 control-label" })
         @Html.DropDownListFor(x => x.OwnerId, (IEnumerable<SelectListItem>)ViewBag.Owners, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.OwnerId, "", new { @class = "text-danger" })
-        <span class="move-right">OR:</span> @Html.ActionLink("Add NEW owner", "All", "Home", new { area = "" }, new { @class = "form-group" })
+        <span class="move-right">OR:</span> @Html.ActionLink("Add NEW owner", "Create", "Owners", new { area = "" }, new { @class = "form-group" })
     </div>
 
     <input type="submit" name="name" value="Create Mark" class="col-md-offset-2 btn btn-lg btn-primary" />

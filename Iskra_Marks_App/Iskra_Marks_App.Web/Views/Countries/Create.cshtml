@@ -1,0 +1,27 @@
+﻿@model Iskra_Marks_App.Web.Models.CountryInputModel
+
+@{
+    ViewBag.Title = "Add new Country";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Create", "Countries", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Name, "", new { @class = "text-danger" })
+    </div>
+
+    <input type="submit" name="name" value="Add new Country" class="col-md-offset-2 btn btn-lg btn-primary" />
+
+}
+
+@section scripts {
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+}

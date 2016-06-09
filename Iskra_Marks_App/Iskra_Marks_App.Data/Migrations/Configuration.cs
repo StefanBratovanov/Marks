@@ -46,6 +46,7 @@ namespace Iskra_Marks_App.Data.Migrations
             {
                 this.SeedMarks(context);
             }
+
         }
 
         private void SeedCountries(MarksDbContext context)
