@@ -55,10 +55,24 @@ namespace Iskra_Marks_App.Web.Controllers
 
         }
 
+        //public ActionResult ByName()
+        //{
+        //    var marks = this.Data
+        //        .Marks
+        //        .All()
+        //        .Where(x )
+        //        .OrderBy(x => x.ExpirationDate)
+        //        .Select(MarkViewModel.ViewModel);
+        //    ;
+
+        //    return View(marks);
+        //}
+
         private void LoadCountries()
         {
             this.ViewBag.Countries = this.Data.Countries
                 .All()
+                .OrderBy(x => x.Name)
                 .Select(x => new SelectListItem
                 {
                     Value = x.Id.ToString(),
@@ -70,6 +84,7 @@ namespace Iskra_Marks_App.Web.Controllers
         {
             this.ViewBag.Owners = this.Data.Owners
                 .All()
+                .OrderBy(x => x.Name)
                 .Select(x => new SelectListItem
                 {
                     Value = x.Id.ToString(),

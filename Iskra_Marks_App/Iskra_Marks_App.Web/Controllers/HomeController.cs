@@ -25,7 +25,7 @@ namespace Iskra_Marks_App.Web.Controllers
                 .Marks
                 .All()
                 .OrderBy(x => x.ExpirationDate)
-                .Where(x => x.ExpirationDate <= expDate && x.ExpirationDate > DateTime.Now)
+                .Where(x => x.ExpirationDate <= expDate && x.ExpirationDate >= DateTime.Now)
                 .Select(MarkViewModel.ViewModel);
             ;
 
