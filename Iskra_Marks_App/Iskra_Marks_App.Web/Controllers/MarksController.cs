@@ -52,6 +52,7 @@ namespace Iskra_Marks_App.Web.Controllers
                 .FirstOrDefault();
 
             return this.View(mark);
+<<<<<<< HEAD
         }
 
         [HttpGet]
@@ -110,6 +111,23 @@ namespace Iskra_Marks_App.Web.Controllers
 
             return this.View(model);
         }
+=======
+
+        }
+
+        //public ActionResult ByName()
+        //{
+        //    var marks = this.Data
+        //        .Marks
+        //        .All()
+        //        .Where(x )
+        //        .OrderBy(x => x.ExpirationDate)
+        //        .Select(MarkViewModel.ViewModel);
+        //    ;
+
+        //    return View(marks);
+        //}
+>>>>>>> 02425e5f798bdde4cdec120ea93ea85095f428ab
 
         private void LoadCountries()
         {
@@ -135,6 +153,7 @@ namespace Iskra_Marks_App.Web.Controllers
                 });
         }
     }
+<<<<<<< HEAD
 }
 
 
@@ -151,3 +170,6 @@ namespace Iskra_Marks_App.Web.Controllers
 
 //    return View(marks);
 //}
+=======
+}
+>>>>>>> 02425e5f798bdde4cdec120ea93ea85095f428ab

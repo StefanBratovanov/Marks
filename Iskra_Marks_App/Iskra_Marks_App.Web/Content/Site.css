@@ -30,6 +30,7 @@ textarea {
 .move-right {
     margin-right: 20px;
     margin-left: 10px;
+<<<<<<< HEAD
 }
 
 .panel-info {
@@ -40,4 +41,6 @@ textarea {
 .all-on-page {
     position: absolute;
     bottom: 16px;
+=======
+>>>>>>> 02425e5f798bdde4cdec120ea93ea85095f428ab
 }

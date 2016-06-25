@@ -276,7 +276,10 @@
     <Content Include="Views\Owners\Details.cshtml" />
     <Content Include="Views\Owners\Index.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\OwnerViewModel.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\Marks\Edit.cshtml" />
+=======
+>>>>>>> 02425e5f798bdde4cdec120ea93ea85095f428ab
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Iskra_Marks_App.Common\Iskra_Marks_App.Common.csproj">
