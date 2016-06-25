@@ -1,0 +1,18 @@
+﻿@model Iskra_Marks_App.Web.ViewModels.MarkViewModel
+
+@{
+    ViewBag.Title = "MarkViewModel";
+}
+
+<div class="panel panel-body panel-info col-md-2">
+    <h4><strong>@Model.Name</strong></h4>
+    <p>Country: @Model.Country</p>
+    <p>Owner: @Model.Owner</p>
+    <p>Number: @Model.Number</p>
+    <p>Expires on: <span class="expiration"> @String.Format("{0:d-MMM-yyyy}", @Model.ExpirationDate)</span></p>
+    <p>Notes: @Model.Notes</p>
+    <p>
+        @Html.ActionLink("Edit", "Edit", "Marks", new { id = Model.Id }, new { @class = "btn btn-primary all-on-page" })
+    </p>
+</div>
+

@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Iskra_Marks_App.Web.ViewModels.MarkViewModel>
+
+@{
+    ViewBag.Title = "Marks expirinig in 6 months !!!";
+}
+<div class="well expiration">
+    <h1>@ViewBag.Title</h1>
+</div>
+
+<div class="row">
+    @if (Model.Any())
+    {
+        @Html.DisplayFor(x => x)
+    }
+    else
+    {
+        <h3 class="col-md-4 col-sm-6 col-xs-12">No Marks expirinig in 6 months</h3>
+    }
+</div>

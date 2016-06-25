@@ -1,0 +1,60 @@
+﻿@model Iskra_Marks_App.Web.Models.MarkInputModel
+
+@{
+    ViewBag.Title = "Create new Mark";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Create", "Marks", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Name, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Number, new { @class = "col-md-2 control-label" })
+        @Html.TextBoxFor(x => x.Number, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Number, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.ExpirationDate, new { @class = "col-md-2 control-label" })
+        @Html.TextBoxFor(x => x.ExpirationDate, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.ExpirationDate, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Notes, new { @class = "col-md-2 control-label" })
+        @Html.TextAreaFor(x => x.Notes, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Notes, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group form-inline">
+        @Html.LabelFor(x => x.CountryId, new { @class = "col-md-2 control-label" })
+        @Html.DropDownListFor(x => x.CountryId, (IEnumerable<SelectListItem>)ViewBag.Countries, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.CountryId, "", new { @class = "text-danger" })
+        <span class="move-right">OR:</span> @Html.ActionLink("Add NEW country", "Create", "Countries", new { area = "" }, new { @class = "form-group" })
+    </div>
+
+
+    <div class="form-group form-inline">
+        @Html.LabelFor(x => x.OwnerId, new { @class = "col-md-2 control-label" })
+        @Html.DropDownListFor(x => x.OwnerId, (IEnumerable<SelectListItem>)ViewBag.Owners, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.OwnerId, "", new { @class = "text-danger" })
+        <span class="move-right">OR:</span> @Html.ActionLink("Add NEW owner", "Create", "Owners", new { area = "" }, new { @class = "form-group" })
+    </div>
+
+    <input type="submit" name="name" value="Create Mark" class="col-md-offset-2 btn btn-lg btn-primary" />
+
+}
+
+@section scripts {
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+}

@@ -1,0 +1,24 @@
+﻿@using System.Linq
+@model  Iskra_Marks_App.Web.ViewModels.CountryDetailsViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="row">
+    <div class="col-md-8">
+        <h2>@Model.Name</h2>
+    </div>
+</div>
+
+<div class="row">
+    <h3>Marks:</h3>
+    @if (Model.Marks.Any())
+    {
+        @Html.DisplayFor(x => x.Marks)
+    }
+    else
+    {
+        <p>No Marks.</p>
+    }
+</div>
